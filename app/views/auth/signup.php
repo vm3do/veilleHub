@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Your App</title>
+    <title>Sign Up - Your App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Inter font for clean modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -57,20 +56,31 @@
 
     <!-- Main content -->
     <main class="min-h-screen flex">
-        <!-- Login form section -->
+        <!-- Signup form section -->
         <div class="w-full md:w-1/2 flex items-center justify-center p-6">
             <div class="w-full max-w-md">
-                <h1 class="text-3xl font-bold mb-2">Welcome back!</h1>
-                <p class="text-gray-600 mb-8">Simplify your workflow and boost your productivity with veilleHub. Get started for free.</p>
+                <h1 class="text-3xl font-bold mb-2">Create your account</h1>
+                <p class="text-gray-600 mb-8">Join veilleHub today and start organizing your work smarter. It's free to get started.</p>
 
                 <form class="space-y-4">
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <input type="text" placeholder="First Name" 
+                                class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
+                        </div>
+                        <div class="w-1/2">
+                            <input type="text" placeholder="Last Name" 
+                                class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
+                        </div>
+                    </div>
+
                     <div>
-                        <input type="text" placeholder="Username" 
+                        <input type="email" placeholder="Email address" 
                             class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
                     </div>
 
                     <div class="relative">
-                        <input type="password" placeholder="Password" 
+                        <input type="password" placeholder="Create password" 
                             class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
                         <button type="button" class="absolute right-4 top-3.5 text-gray-400">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,13 +90,20 @@
                         </button>
                     </div>
 
-                    <div class="text-right">
-                        <a href="#" class="text-sm text-gray-600 hover:text-gray-800">Forgot Password?</a>
+                    <div class="relative">
+                        <input type="password" placeholder="Confirm password" 
+                            class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
+                        <button type="button" class="absolute right-4 top-3.5 text-gray-400">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </button>
                     </div>
 
                     <button type="submit" 
                         class="w-full py-3 px-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
-                        Login
+                        Create Account
                     </button>
 
                     <div class="relative my-8">
@@ -94,7 +111,7 @@
                             <div class="w-full border-t border-gray-200"></div>
                         </div>
                         <div class="relative flex justify-center text-sm">
-                            <span class="px-4 bg-white text-gray-500">or continue with</span>
+                            <span class="px-4 bg-white text-gray-500">or sign up with</span>
                         </div>
                     </div>
 
@@ -108,7 +125,7 @@
                     </div>
 
                     <p class="text-center text-sm text-gray-600 mt-8">
-                        Not a member? <a href="#" class="text-gray-900 hover:underline">Register now</a>
+                        Already have an account? <a href="#" class="text-gray-900 hover:underline">Login here</a>
                     </p>
                 </form>
             </div>
@@ -117,7 +134,7 @@
         <!-- Image section - hidden on mobile -->
         <div class="hidden md:flex md:w-1/2 bg-[#F6F8F7] items-center justify-center p-12">
             <div class="max-w-lg">
-                <img src="../../../public/assets/login.svg" alt="Meditation illustration" class="w-full">
+                <img src="../../../public/assets/signup.svg" alt="Meditation illustration" class="w-full">
                 <div class="text-center mt-8">
                     <h2 class="text-xl font-semibold">Make your work easier and organized</h2>
                     <p class="text-gray-600">with Tuga's App</p>
