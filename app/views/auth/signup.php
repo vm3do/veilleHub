@@ -60,7 +60,7 @@
         <div class="w-full md:w-1/2 flex items-center justify-center p-6">
             <div class="w-full max-w-md">
                 <h1 class="text-3xl font-bold mb-2">Create your account</h1>
-                <p class="text-gray-600 mb-8">Join veilleHub today and start organizing your work smarter. It's free to get started.</p>
+                <p class="text-gray-600 mb-8">Join veilleHub today and start organizing your presentations smarter. It's free !</p>
 
                 <form class="space-y-4">
                     <div class="flex space-x-4">
@@ -71,6 +71,22 @@
                         <div class="w-1/2">
                             <input type="text" placeholder="Last Name" 
                                 class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
+                        </div>
+                    </div>
+
+                    <!-- User Type Selection -->
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300">
+                                <input type="radio" name="user_type" value="student" class="mr-2">
+                                <span class="text-gray-700">Student</span>
+                            </label>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300">
+                                <input type="radio" name="user_type" value="staff" class="mr-2">
+                                <span class="text-gray-700">Staff</span>
+                            </label>
                         </div>
                     </div>
 
@@ -136,8 +152,8 @@
             <div class="max-w-lg">
                 <img src="../../../public/assets/signup.svg" alt="Meditation illustration" class="w-full">
                 <div class="text-center mt-8">
-                    <h2 class="text-xl font-semibold">Make your work easier and organized</h2>
-                    <p class="text-gray-600">with Tuga's App</p>
+                    <h2 class="text-xl font-semibold">Make your presentation easier and organized</h2>
+                    <p class="text-gray-600">with veilleHub</p>
                 </div>
             </div>
         </div>

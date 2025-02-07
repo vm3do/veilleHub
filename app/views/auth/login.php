@@ -119,11 +119,12 @@
             <div class="max-w-lg">
                 <img src="../../../public/assets/login.svg" alt="Meditation illustration" class="w-full">
                 <div class="text-center mt-8">
-                    <h2 class="text-xl font-semibold">Make your work easier and organized</h2>
-                    <p class="text-gray-600">with Tuga's App</p>
+                    <h2 class="text-xl font-semibold">Make your presentation easier and organized</h2>
+                    <p class="text-gray-600">with veilleHub</p>
                 </div>
             </div>
         </div>
+
     </main>
 
     <!-- Footer -->
