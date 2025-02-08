@@ -18,7 +18,8 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <span class="text-xl font-semibold">veilleHub</span>
+                    <!-- <span class="text-xl font-semibold">veilleHub</span> -->
+                    <img src="../../../public/assets/logo.svg" class="w-8">
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -65,7 +66,7 @@
 
                 <form class="space-y-4">
                     <div>
-                        <input type="text" placeholder="Username" 
+                        <input type="text" placeholder="Email" 
                             class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-gray-300 focus:ring-0">
                     </div>
 
@@ -84,8 +85,7 @@
                         <a href="#" class="text-sm text-gray-600 hover:text-gray-800">Forgot Password?</a>
                     </div>
 
-                    <button type="submit" 
-                        class="w-full py-3 px-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
+                    <button type="submit" class="w-full py-3 px-4 bg-black text-white rounded-full hover:bg-lime-400 hover:text-black hover:shadow-[inset_0_0_0_2px_black] transition-colors">
                         Login
                     </button>
 
@@ -119,7 +119,7 @@
             <div class="max-w-lg">
                 <img src="../../../public/assets/login.svg" alt="Meditation illustration" class="w-full">
                 <div class="text-center mt-8">
-                    <h2 class="text-xl font-semibold">Make your presentation easier and organized</h2>
+                    <h2 class="text-xl font-semibold">Make your presentation organized</h2>
                     <p class="text-gray-600">with veilleHub</p>
                 </div>
             </div>

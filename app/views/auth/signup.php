@@ -17,7 +17,8 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <span class="text-xl font-semibold">veilleHub</span>
+                    <!-- <span class="text-xl font-semibold">veilleHub</span> -->
+                    <img src="../../../public/assets/logo.svg" class="w-8">
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -117,8 +118,7 @@
                         </button>
                     </div>
 
-                    <button type="submit" 
-                        class="w-full py-3 px-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
+                    <button type="submit" class="w-full py-3 px-4 bg-black text-white rounded-full hover:bg-lime-400 hover:text-black hover:shadow-[inset_0_0_0_2px_black] transition-colors">
                         Create Account
                     </button>
 
