@@ -83,10 +83,6 @@
                     </div>
                 </div>
                 <p class="text-2xl font-semibold mt-2 text-blue-900">156</p>
-                <div class="flex items-center mt-2 text-blue-600 text-sm">
-                    <span>↑ 12%</span>
-                    <span class="text-blue-400 ml-2">vs last month</span>
-                </div>
             </div>
 
             <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 shadow-sm border border-purple-100">
