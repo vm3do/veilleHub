@@ -110,28 +110,72 @@
                         </div>
 
                         <!-- Contributors Selection -->
-                        <div x-data="{ selected: [] }">
+                        <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Select Contributors (min 2)</label>
-                            <div class="relative">
-                                <select x-model="selected" 
-                                        multiple 
-                                        class="w-full pl-4 pr-10 py-2 text-sm border border-gray-200 rounded-xl appearance-none focus:border-gray-300 focus:ring-0"
-                                        size="4">
-                                    <option value="1">John Smith</option>
-                                    <option value="2">Emma Smith</option>
-                                    <option value="3">Michael Johnson</option>
-                                    <option value="4">Sarah Wilson</option>
-                                    <option value="5">David Brown</option>
-                                </select>
+                            <div class="border border-gray-200 rounded-xl">
+                                <div class="max-h-[240px] overflow-y-auto p-3 space-y-2 custom-scrollbar" id="contributorsContainer">
+                                    <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300 bg-white">
+                                        <input type="checkbox" name="contributors[]" value="1" class="contributor-checkbox hidden">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="flex items-center">
+                                                <span class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold text-sm mr-3">JS</span>
+                                                <span class="text-sm text-gray-700">John Smith</span>
+                                            </div>
+                                            <div class="h-5 w-5 border-2 border-gray-300 rounded-full checkbox-indicator"></div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300 bg-white">
+                                        <input type="checkbox" name="contributors[]" value="2" class="contributor-checkbox hidden">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="flex items-center">
+                                                <span class="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-semibold text-sm mr-3">ES</span>
+                                                <span class="text-sm text-gray-700">Emma Smith</span>
+                                            </div>
+                                            <div class="h-5 w-5 border-2 border-gray-300 rounded-full checkbox-indicator"></div>
+                                        </div>
+                                    </label>
+                                    <!-- Example of more students -->
+                                    <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300 bg-white">
+                                        <input type="checkbox" name="contributors[]" value="3" class="contributor-checkbox hidden">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="flex items-center">
+                                                <span class="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-semibold text-sm mr-3">MJ</span>
+                                                <span class="text-sm text-gray-700">Mike Johnson</span>
+                                            </div>
+                                            <div class="h-5 w-5 border-2 border-gray-300 rounded-full checkbox-indicator"></div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300 bg-white">
+                                        <input type="checkbox" name="contributors[]" value="4" class="contributor-checkbox hidden">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="flex items-center">
+                                                <span class="h-8 w-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-semibold text-sm mr-3">AW</span>
+                                                <span class="text-sm text-gray-700">Anna Wilson</span>
+                                            </div>
+                                            <div class="h-5 w-5 border-2 border-gray-300 rounded-full checkbox-indicator"></div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-3 rounded-full border border-gray-200 cursor-pointer hover:border-gray-300 bg-white">
+                                        <input type="checkbox" name="contributors[]" value="5" class="contributor-checkbox hidden">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="flex items-center">
+                                                <span class="h-8 w-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-semibold text-sm mr-3">DB</span>
+                                                <span class="text-sm text-gray-700">David Brown</span>
+                                            </div>
+                                            <div class="h-5 w-5 border-2 border-gray-300 rounded-full checkbox-indicator"></div>
+                                        </div>
+                                    </label>
+                                    <!-- Add more students as needed -->
+                                </div>
                             </div>
-                            <p class="mt-2 text-sm text-gray-500">
-                                Selected: <span x-text="selected.length"></span>/2
-                            </p>
+                            <p class="mt-2 text-sm text-gray-500" id="contributorCount">Selected: 0/2</p>
                         </div>
 
                         <!-- Submit Button -->
                         <button type="submit" 
-                                class="w-full px-4 py-2 bg-black text-white rounded-full text-sm hover:bg-lime-400 hover:text-black hover:shadow-[inset_0_0_0_2px_black] transition-colors">
+                                id="submitBtn"
+                                disabled
+                                class="w-full px-4 py-2 bg-black text-white rounded-full text-sm hover:bg-lime-400 hover:text-black hover:shadow-[inset_0_0_0_2px_black] transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                             Schedule Presentation
                         </button>
                     </form>
@@ -139,5 +183,76 @@
             </div>
         </div>
     </main>
+
+    <script>
+        // Contributors selection logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const contributorsContainer = document.getElementById('contributorsContainer');
+            const contributorCount = document.getElementById('contributorCount');
+            const submitBtn = document.getElementById('submitBtn');
+            const checkboxes = document.querySelectorAll('.contributor-checkbox');
+            const indicators = document.querySelectorAll('.checkbox-indicator');
+
+            function updateContributorCount() {
+                const selectedCount = document.querySelectorAll('.contributor-checkbox:checked').length;
+                contributorCount.textContent = `Selected: ${selectedCount}/2`;
+                
+                // Enable/disable submit button based on selection
+                submitBtn.disabled = selectedCount !== 2;
+
+                // Update checkbox styles
+                checkboxes.forEach((checkbox, index) => {
+                    if (checkbox.checked) {
+                        indicators[index].classList.add('bg-black', 'border-0', 'after:content-["✓"]', 'after:text-white', 'after:text-xs', 'flex', 'items-center', 'justify-center');
+                    } else {
+                        indicators[index].classList.remove('bg-black', 'border-0', 'after:content-["✓"]', 'after:text-white', 'after:text-xs', 'flex', 'items-center', 'justify-center');
+                    }
+
+                    // Disable other checkboxes if 2 are selected
+                    if (selectedCount >= 2 && !checkbox.checked) {
+                        checkbox.disabled = true;
+                        checkbox.parentElement.classList.add('opacity-50', 'cursor-not-allowed');
+                    } else {
+                        checkbox.disabled = false;
+                        checkbox.parentElement.classList.remove('opacity-50', 'cursor-not-allowed');
+                    }
+                });
+            }
+
+            // Add click event listeners to checkboxes
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateContributorCount);
+            });
+
+            // Initial count update
+            updateContributorCount();
+        });
+
+        // Custom scrollbar styles
+        document.addEventListener('DOMContentLoaded', function() {
+            const customScrollbar = document.querySelector('.custom-scrollbar');
+            if (customScrollbar) {
+                customScrollbar.style.scrollbarWidth = 'thin';
+                customScrollbar.style.scrollbarColor = '#E5E7EB transparent';
+            }
+        });
+    </script>
+
+    <style>
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: #E5E7EB transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #E5E7EB;
+            border-radius: 20px;
+        }
+    </style>
 </body>
 </html>
