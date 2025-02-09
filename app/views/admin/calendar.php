@@ -14,7 +14,59 @@
 <body class="bg-[#F6F8F7]">
     <!-- Header (same as other pages) -->
     <header class="bg-white shadow-sm" x-data="{ isOpen: false }">
-        <!-- ... existing header code ... -->
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <span class="text-xl font-semibold">veilleHub</span> -->
+                    <img src="../../../public/assets/logo.svg" class="w-8">
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button @click="isOpen = !isOpen" class="md:hidden">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M4 6h16M4 12h16M4 18h16" x-show="!isOpen"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" x-show="isOpen"/>
+                    </svg>
+                </button>
+
+                <!-- Desktop menu -->
+                <div class="hidden md:flex md:items-center md:absolute md:left-1/2 md:-translate-x-1/2">
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-700 hover:text-gray-900">Users</a>
+                        <a href="#" class="text-gray-700 hover:text-gray-900">Veilles</a>
+                        <a href="#" class="text-gray-700 hover:text-gray-900">Calendar</a>
+                    </div>
+                </div>
+
+                <!-- Admin profile -->
+                <div class="hidden md:flex md:items-center space-x-4">
+                    <button class="text-gray-600 hover:text-red-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Absolute Mobile menu -->
+            <div class="absolute left-0 right-0 bg-white shadow-lg md:hidden z-50" 
+                x-show="isOpen" 
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                @click.away="isOpen = false">
+                <div class="px-6 pt-4 pb-4 space-y-2">
+                    <a href="#" class="block py-2 text-gray-700 hover:text-gray-900">Users</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-gray-900">Veilles</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-gray-900">Calendar</a>
+                    <div class="pt-2 border-t border-gray-100">
+                        <a href="#" class="block py-2 text-gray-700 hover:text-gray-900">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Main Content -->
