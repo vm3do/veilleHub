@@ -176,7 +176,7 @@
                                        class="px-2 py-1 text-sm border-b border-transparent hover:border-gray-300 focus:border-black focus:outline-none transition-colors">
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                                <button class="text-green-600 hover:text-green-800 transition-colors" title="Save changes">
+                                <button class="text-black hover:text-green-500 transition-colors" title="Save changes">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
