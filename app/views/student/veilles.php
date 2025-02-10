@@ -7,14 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/main.min.css' rel='stylesheet' /> -->
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body class="bg-[#F6F8F7]">
-    <!-- Header here -->
+
     <header class="bg-white shadow-sm" x-data="{ isOpen: false }">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -41,7 +39,7 @@
                     </div>
                 </div>
 
-                <!-- Admin profile -->
+                <!-- Logout button -->
                 <div class="hidden md:flex md:items-center space-x-4">
                     <button class="text-gray-600 hover:text-red-800">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

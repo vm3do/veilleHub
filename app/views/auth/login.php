@@ -13,12 +13,11 @@
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header with absolute hamburger menu -->
     <header class="bg-white shadow-sm" x-data="{ isOpen: false }">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <!-- <span class="text-xl font-semibold">veilleHub</span> -->
+
                     <img src="../../../public/assets/logo.svg" class="w-8">
                 </div>
                 
@@ -114,7 +113,7 @@
             </div>
         </div>
 
-        <!-- Image section - hidden on mobile -->
+        <!-- Image section -->
         <div class="hidden md:flex md:w-1/2 bg-[#F6F8F7] items-center justify-center p-12">
             <div class="max-w-lg">
                 <img src="../../../public/assets/login.svg" alt="Meditation illustration" class="w-full">

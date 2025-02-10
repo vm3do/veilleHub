@@ -17,7 +17,7 @@
     </style>
 </head>
 <body class="bg-[#F6F8F7]">
-    <!-- Header here -->
+
     <header class="bg-white shadow-sm" x-data="{ isOpen: false }">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <!-- Admin profile -->
+                <!-- Logout button -->
                 <div class="hidden md:flex md:items-center space-x-4">
                     <button class="text-gray-600 hover:text-red-800">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
